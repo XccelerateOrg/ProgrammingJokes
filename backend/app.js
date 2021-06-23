@@ -18,8 +18,8 @@ app.get("/api/jokes", (request, response) => {
 
 // post route
 app.post("/api/jokes", (request, response) => {
-  let joke = request.body;
-  console.log("joke", joke);
+  let joke = request.body.joke;
+  console.log("joke in backend", joke);
   return knex("jokes")
     .insert(joke)
     .then(() => {
